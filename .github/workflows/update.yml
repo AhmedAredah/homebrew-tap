@@ -1,0 +1,31 @@
+name: Update formula
+# Follow QAVF releases on PyPI without stored credentials: this workflow writes
+# only to its own repository. It is a no-op when the formula is current.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-formula
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - id: bump
+        run: python3 .github/scripts/bump.py
+      - if: steps.bump.outputs.changed == 'true'
+        name: Check and commit the formula
+        env:
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          ruby -c Formula/qavf.rb
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "qavf $VERSION"
+          git push
