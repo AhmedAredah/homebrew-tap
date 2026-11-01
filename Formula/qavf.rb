@@ -1,8 +1,8 @@
 class Qavf < Formula
   desc "Configurable data QA/QC for files, dataframes and database queries"
   homepage "https://github.com/AhmedAredah/qavf"
-  url "https://files.pythonhosted.org/packages/b9/82/7fa630a5d63e51b79407971457682d954a712151da60845f0c78945872eb/qavf-0.5.0.tar.gz"
-  sha256 "29998a815481591200181c58d4ce518a7f5cd38bfe92281f46bccc25cffa349d"
+  url "https://files.pythonhosted.org/packages/35/b6/abf09069560b1c8a0d67346a6bc6bbbb7a005473e41f82d28710d286974c/qavf-0.6.0.tar.gz"
+  sha256 "580a387c09f057b529a8739d7a5013306f7cd78e1389367e43c94083fbba122a"
   license "MIT"
 
   livecheck do
