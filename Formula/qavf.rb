@@ -3,7 +3,7 @@ class Qavf < Formula
   homepage "https://github.com/AhmedAredah/qavf"
   url "https://files.pythonhosted.org/packages/e8/9b/18e76f596b71ca1ae70e48ce3436e7c0dce5172d8df71cb72419884c11f2/qavf-0.6.2.tar.gz"
   sha256 "c6d2c089cc00234d6b29ff6310b1998ccba5e8b404b62748ac2011401a0e3252"
-  license "MIT"
+  license "Apache-2.0"
 
   livecheck do
     url :stable
